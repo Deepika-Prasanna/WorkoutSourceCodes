@@ -1,0 +1,26 @@
+package com.deepu.workouts;
+
+public class Student implements Comparable<Student>{
+	
+	int rollNo;
+	String name;
+	int age;
+	
+	
+	public Student(int rollNo, String name, int age) {
+		super();
+		this.rollNo = rollNo;
+		this.name = name;
+		this.age = age;
+	}
+
+
+	@Override
+	public int compareTo(Student stud) {
+		
+		return 0;
+	}
+	
+	
+
+}

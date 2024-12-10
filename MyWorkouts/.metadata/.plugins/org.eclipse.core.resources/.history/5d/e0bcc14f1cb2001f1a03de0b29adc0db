@@ -1,0 +1,10 @@
+package com.deepu.general.workouts;
+
+public class Student {
+
+	String name = "Deepu";
+	
+	public Student(){
+		System.out.println("Calling Student constructor tp creat Student Object");
+	}
+}

@@ -1,0 +1,17 @@
+
+public class Main {
+    public static void main(String[] args) {
+     
+     Main main = new Main();
+     main.add(2,3L);
+     
+  }
+  
+  long add(int a, long b){
+    return  (a+b);
+  }
+  
+  long add(long a, int b){
+    return (a+b);
+  }
+}

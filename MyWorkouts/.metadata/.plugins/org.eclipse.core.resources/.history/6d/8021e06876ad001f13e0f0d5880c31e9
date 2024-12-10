@@ -1,0 +1,21 @@
+/*
+ * 1. Eager Initialization (Thread-safe):
+    In this approach, the instance is created when the class is loaded. It's simple and effective but might create an instance 
+    even if it's never used.
+ */
+
+
+package com.deepu.singletondesingpattern;
+
+public class Singleton {
+	
+	private static Singleton instance = new Singleton();
+	
+	private Singleton() {
+		
+	}
+
+	public static Singleton getInstance() {
+		return instance;
+	}
+}

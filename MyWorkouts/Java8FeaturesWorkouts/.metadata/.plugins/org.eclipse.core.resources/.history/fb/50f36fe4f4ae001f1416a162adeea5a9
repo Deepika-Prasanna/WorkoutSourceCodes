@@ -1,0 +1,14 @@
+package com.deepu.method.reference;
+
+public class AssignmentWorkout {
+
+	public static void main(String[] args) {
+		
+	int add = new AssignmentWorkout().sum(10, 20);
+	
+	
+	}
+	int sum(int a, int b) {
+		return a+b;
+	}
+}

@@ -1,0 +1,15 @@
+package com.deepu.method.reference;
+
+import java.util.function.Supplier;
+
+public class SupplierFunctionalInterfaceExample {
+
+	public static void main(String[] args) {
+		
+		String str = "Deepu";
+		Supplier<String> supply = null;
+		String toUpperCase = supply.get();
+		System.out.println(toUpperCase);
+		
+	}
+}

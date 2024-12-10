@@ -1,0 +1,18 @@
+//3 Ways to find the duplicates elements from the given array
+
+package com.deepu.general.workouts;
+
+public class DuplicateElementsFromArrya {
+	
+	public static void main(String[] args) {
+	
+	String[] names = {"Deepu", "Dhruvith", "Prasanna", "Sujatha", "Adveesh", "Veda", "Chandu", "Deepu"};
+	
+	System.out.println("Length = "+ names.length);
+	
+	// 1. Compare each element o(n*n)
+	
+	
+	}
+
+}

@@ -1,0 +1,17 @@
+package com.deepu.java8.interview.questions;
+
+import java.util.Arrays;
+import java.util.Optional;
+
+public class LongestStringInAStringArray {
+
+	public static void main(String[] args) {
+		
+		String[] stringArray = {"java", "techie", "springboot", "microservices"};
+		
+		Optional<String> longestString = Arrays.stream(stringArray).reduce((word1,word2)-> word1.length() >word2.length() ? word1:word2);
+	
+		System.out.println(longestString);
+	}
+	
+}

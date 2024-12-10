@@ -1,0 +1,20 @@
+package com.deepu.general.workouts;
+
+public class WaysToCreateObjectInJava {
+	
+	public static void main(String[] args) throws InstantiationException, IllegalAccessException, ClassNotFoundException {
+		
+		System.out.println("********* Using new Keyword *********");
+		Student s1 = new Student();
+		System.out.println(s1);
+		System.out.println(s1.name);
+		
+		System.out.println();
+		
+		System.out.println("********* Using newInstance of Class class *********");
+		Student s2 = (Student) Student.class.forName("com.deepu.general.workouts.Student").newInstance();
+		System.out.println(s2);
+		System.out.println(s2.name = "Deepika");
+	}
+
+}

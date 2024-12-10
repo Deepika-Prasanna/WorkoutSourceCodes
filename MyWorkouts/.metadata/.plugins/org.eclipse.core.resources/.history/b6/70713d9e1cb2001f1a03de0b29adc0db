@@ -1,0 +1,10 @@
+package com.deepu.general.workouts;
+
+public class Student implements Cloneable{
+
+	String name = "Deepu";
+	
+	public Student(){
+		System.out.println("Calling Student constructor to creat Student Object");
+	}
+}

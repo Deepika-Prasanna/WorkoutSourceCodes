@@ -1,0 +1,40 @@
+//Remove the duplicate elements from sorted array
+// {1,2,2,3,4,4,5,6,6,7,8,8,9};
+// {1,2,3,4,5,6,7,8,9}
+
+package com.deepu.general.workouts;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+public class RemoveTheDuplicateArray {
+	
+	public static void main(String[] args) {
+		
+		int[] numbers = {1,2,2,3,4,4,5,6,6,7,8,8,9};
+		
+		Map<Integer, Integer> numberMap = new HashMap<>();
+		for(Integer interger : numbers) {
+			Integer count = numberMap.get(interger);
+			if(count == null) {
+				numberMap.put(interger, 1);
+			} else {
+				numberMap.put(interger, ++count);
+			}
+		}
+		
+		Map<Integer, Integer> uniqueNumberMap = new HashMap<>();
+		
+		Set<Entry<Integer, Integer>> numberEntrySet = numberMap.entrySet();
+		for(Entry<Integer, Integer> entry : numberEntrySet) {
+			if(entry.getValue() == 1) { 
+				uniqueNumberMap.put(entry.getKey(), 1);
+			}
+		}
+		
+		System.out.println(((Entry<Integer, Integer>) uniqueNumberMap.entrySet()).getKey());
+	}
+
+}

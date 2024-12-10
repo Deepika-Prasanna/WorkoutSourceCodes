@@ -1,0 +1,275 @@
+package com.deepu.workouts;
+
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+
+public class MyCustomStringList<T> implements List<T>{
+	
+	String[] elements;
+	int size;
+	
+	public MyCustomStringList() {
+		elements = new String[10];
+	}
+
+	@Override
+	public int size() {
+		return size;
+	}
+
+	@Override
+	public boolean isEmpty() {
+		return size == 0;
+	}
+
+	@Override
+	public boolean contains(Object o) {
+		for(int i=0; i<size; i++) {
+			if(elements[i].equals(o)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	@Override
+	public Iterator iterator() {
+		return new Iterator() {
+			int index = 0;
+			
+			@Override
+			public boolean hasNext() {
+				return index < size;
+			}
+
+			@Override
+			public Object next() {
+				return elements[index++];
+			}
+			
+		};
+	}
+
+	@Override
+	public Object[] toArray() {
+		String[] newStringArray = new String[size];
+		System.arraycopy(elements, 0, newStringArray, 0, size);
+		return newStringArray;
+	}
+
+	@Override
+	public Object[] toArray(Object[] a) {
+		if(a.length < size) {
+			return (T[])toArray();
+		}
+		System.arraycopy(elements, 0, a, 0, size);
+		return a;
+	}
+
+	@Override
+	public boolean add(Object e) {
+		if(size == elements.length) {
+			resize();
+		}
+		elements[size++] = (String)e;
+		return true;
+	}
+	
+	private void resize() {
+		String[] newStringList = new String[elements.length * 2];
+		System.arraycopy(elements, 0, newStringList, 0, size);
+		elements = newStringList;
+	}
+
+	@Override
+	public boolean remove(Object o) {
+		for(int i=0; i<size; i++) {
+			if(elements[i].equals(o)) {
+				System.arraycopy(elements, i+1, elements, i, size-i-1);
+				elements[--size] = null;
+				return true; 
+			}
+		}
+		return false;
+	}
+
+	@Override
+	public boolean containsAll(Collection c) {
+		boolean contains = false;
+		for(Object o : c) {
+			if(!contains(o)) {
+				return false;
+			}
+			contains = true;
+		}
+		return contains;
+	}
+
+	@Override
+	public boolean addAll(Collection c) {
+		for(Object o : c) {
+			add(o);
+		}
+		return true;
+	}
+
+	@Override
+	public boolean addAll(int index, Collection c) {
+		if(index < 0 || index > size) {
+			throw new IndexOutOfBoundsException();
+		}
+		int sizeOfC = c.size();
+		if(sizeOfC == 0) {
+			return false;
+		}
+		if(size + sizeOfC > elements.length) {
+			resize();
+		}
+		System.arraycopy(elements, index, elements, sizeOfC + index, size - index);
+		
+		for(Object o: c) {
+			elements[index++] = o.toString();
+		}
+		size = size + sizeOfC;
+		return true;
+	}
+
+	@Override
+	public boolean removeAll(Collection c) {
+		for(Object o : c) {
+			if(contains(o)) {
+				remove(o);
+			}
+		}
+		return true;
+	}
+
+	@Override
+	public boolean retainAll(Collection c) {
+		return false;
+	}
+
+	@Override
+	public void clear() {
+		for(int i=0; i< size; i++) {
+			elements[i] = null;
+		}
+	}
+
+	@Override
+	public T get(int index) {
+		for(int i=0; i < size; i++) {
+			if(i == index) {
+				return (T)elements[i];
+			}
+		}
+		return null;
+	}
+
+	@Override
+	public T set(int index, Object element) {
+		String oldString = elements[index];
+		elements[index] = element.toString();
+		return (T)oldString;
+	}
+
+	@Override
+	public void add(int index, Object element) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public T remove(int index) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int indexOf(Object o) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int lastIndexOf(Object o) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public ListIterator listIterator() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ListIterator listIterator(int index) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List subList(int fromIndex, int toIndex) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public static void main(String[] args) {
+		MyCustomStringList<String> myList = new MyCustomStringList<>();
+		myList.add("AAA");
+		myList.add("BBB");
+		myList.add("CCC");
+		myList.add("DDD");
+		
+		System.out.println("Size = " + myList.size());
+		System.out.println("Is empty = " + myList.isEmpty());
+		System.out.println("Contains DDD ? " + myList.contains("DDD"));
+		for(String str : myList) {
+			System.out.println(str);
+		}
+		myList.remove("BBB");
+		System.out.println("After removing BBB");
+		for(String str : myList) {
+			System.out.println(str);
+		}
+		
+		MyCustomStringList<String> anotherList = new MyCustomStringList<String>();
+		anotherList.addAll(myList);
+		anotherList.add("BBB");
+		System.out.println("After calling addAll ");
+		for(String str : anotherList) {
+			System.out.println(str);
+		}
+		
+		System.out.println(myList.containsAll(anotherList));
+		System.out.println(anotherList.containsAll(myList));
+		
+		MyCustomStringList<String> list1 = new MyCustomStringList<String>();
+		list1.add("aaa");
+		list1.add("bbb");
+		list1.add("ccc");
+		
+		myList.addAll(1, list1);
+		System.out.println("After calling addAll with index ");
+		for(String str : myList) {
+			System.out.println(str);
+		}
+		
+		anotherList.removeAll(myList);
+		System.out.println("After calling remove All");
+		for(String str : anotherList) {
+			System.out.println(str);
+		}
+		
+		anotherList.set(2, "BBB");
+		System.out.println("After calling set");
+		for(String str : anotherList) {
+			System.out.println(str);
+		}
+		
+	}
+
+}

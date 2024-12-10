@@ -1,0 +1,12 @@
+package com.deepu.method.reference;
+
+import java.util.function.Supplier;
+
+public class ConstructorReferenceExample {
+
+	public static void main(String[] args) {
+		
+		Supplier<Employee> mySupplier = Employee::new;
+		Employee emp1 = mySupplier.get();
+	}
+}

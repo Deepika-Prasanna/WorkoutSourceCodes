@@ -1,0 +1,11 @@
+/*
+ * 2. Lazy Initialization (Non-Thread Safe):
+		In this approach, the instance is created only when getInstance() is called. However, it is not thread-safe and should 
+		be avoided in multi-threaded environments.
+ */
+
+package com.deepu.singletondesingpattern;
+
+public class SingletonLazyInitialization {
+
+}

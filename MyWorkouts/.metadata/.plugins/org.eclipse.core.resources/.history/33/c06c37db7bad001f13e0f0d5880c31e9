@@ -1,0 +1,14 @@
+/*
+ * Singleton Pattern Integrity: 
+ * 		While reflection allows breaking the Singleton pattern, it's generally considered an attack on the pattern. 
+ * 		Developers can protect against this by adding checks inside the constructor to prevent multiple instances from being 
+ * 		created through reflection. For example, you can throw an exception if the instance is already created.
+ * 
+ */
+
+
+package com.deepu.singletondesingpattern;
+
+public class SingletonProtectionFromReflection {
+
+}

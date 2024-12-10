@@ -1,0 +1,9 @@
+package com.deepu.java8.interview.questions;
+
+public class NumberofCharsInAString {
+
+	public static void main(String[] args) {
+		String str = "ilovejavatechie";
+		
+	}
+}

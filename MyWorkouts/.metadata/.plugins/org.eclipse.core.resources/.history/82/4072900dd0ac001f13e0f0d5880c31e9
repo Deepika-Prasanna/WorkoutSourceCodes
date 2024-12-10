@@ -1,0 +1,16 @@
+// Reverse the given string
+
+package com.deepu.string.workouts;
+
+public class ReverseTheGivenString {
+	
+	public static void main(String[] args) {
+		
+		String str = "String reverse program";
+		
+		String reverse = reverseString();
+		
+		System.out.println("REversed String is " + reverse);
+	}
+
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.deepu.method.reference.ArrayListAddExample&apos; to &apos;ArraysAsListExample&apos;&#x0D;&#x0A;- Original project: &apos;Java8MethodReference&apos;&#x0D;&#x0A;- Original element: &apos;com.deepu.method.reference.ArrayListAddExample&apos;&#x0D;&#x0A;- Renamed element: &apos;com.deepu.method.reference.ArraysAsListExample&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;ArrayListAddExample&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.deepu.method.reference{ArrayListAddExample.java[ArrayListAddExample" matchStrategy="1" name="ArraysAsListExample" qualified="false" references="true" similarDeclarations="false" stamp="1732954458456" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,11 @@
+package com.deepu.springioc;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Computer {
+
+	public void start() {
+		System.out.println("Computer starting");
+	}
+}

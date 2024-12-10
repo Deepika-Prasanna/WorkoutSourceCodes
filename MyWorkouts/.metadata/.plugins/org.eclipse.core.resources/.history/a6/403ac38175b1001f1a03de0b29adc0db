@@ -1,0 +1,12 @@
+package com.deepu.workouts;
+
+public class ComparableExample {
+
+	public static void main(String[] args) {
+		
+		Student s1 = new Student(1,"Deepu",36);
+		Student s2 = new Student(2,"Dhruvith", 8);
+		Student s3 = new Student(3,"Prasanna",77);
+		
+	}
+}

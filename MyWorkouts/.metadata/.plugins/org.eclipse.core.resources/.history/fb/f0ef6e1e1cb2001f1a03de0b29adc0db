@@ -1,0 +1,33 @@
+package com.deepu.general.workouts;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+
+public class WaysToCreateObjectInJava {
+	
+	public static void main(String[] args) throws InstantiationException, IllegalAccessException, ClassNotFoundException, 
+												  NoSuchMethodException, SecurityException, IllegalArgumentException, 
+												  InvocationTargetException {
+		
+		System.out.println("********* Using new Keyword *********");
+		Student s1 = new Student();
+		System.out.println(s1);
+		System.out.println(s1.name);
+		
+		System.out.println();
+		
+		System.out.println("********* Using newInstance of Class class *********");
+		//Student s2 = (Student) Class.forName("com.deepu.general.workouts.Student").newInstance(); // 1st way to load the class
+		Student s2 = (Student) Student.class.forName("com.deepu.general.workouts.Student").newInstance(); //// 2nd way to load the class
+		System.out.println(s2);
+		System.out.println(s2.name = "Deepika");
+		
+		System.out.println();
+		
+		System.out.println("********* Using newInstance of Constructor class *********");
+		Constructor<Student> consructor = Student.class.getConstructor(); //Loading the class
+		consructor.newInstance();
+		
+	}
+
+}

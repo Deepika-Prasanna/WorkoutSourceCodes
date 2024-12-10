@@ -1,0 +1,21 @@
+package com.deepu.streamapi.examples;
+
+import java.util.function.Supplier;
+import java.util.stream.Stream;
+
+public class StreamTest1 {
+
+	public static void main(String[] args) {
+		
+		Supplier<String> supplier = new Supplier() {
+
+			@Override
+			public Object get() {
+				return "Hello Stream";
+			}
+			
+		};
+		
+		Stream.generate(supplier);
+	}
+}

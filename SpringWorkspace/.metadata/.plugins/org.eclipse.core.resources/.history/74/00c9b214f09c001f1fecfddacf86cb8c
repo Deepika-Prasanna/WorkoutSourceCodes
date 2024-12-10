@@ -1,0 +1,8 @@
+package com.deepu.springioc;
+
+public class Keyboard {
+
+	public void plugIn() {
+		System.out.println("Keyboard plugged in");
+	}
+}

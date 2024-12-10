@@ -1,0 +1,12 @@
+package com.deepu.method.reference;
+
+public class AssignmentWorkout {
+
+	public static void main(String[] args) {
+		
+	
+	}
+	int sum(int a, int b) {
+		return a+b;
+	}
+}

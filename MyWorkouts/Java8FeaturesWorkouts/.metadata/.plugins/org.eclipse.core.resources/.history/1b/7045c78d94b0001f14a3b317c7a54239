@@ -1,0 +1,19 @@
+package com.deepu.parallel.stream;
+
+import java.util.ArrayList;
+
+public class IterateExample {
+
+	public static void main(String[] args) {
+		
+		ArrayList<Integer> listOfInteger = new ArrayList<>();
+		
+		for(int i=1; i<=5;i++) {
+			listOfInteger.stream().map(num -> num+1).forEach(num -> System.out.println(num));
+			
+			System.out.println(listOfInteger);
+			System.out.println(listOfInteger.size());
+			
+		}
+	}
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="data" class="com.deepu.springframework.ioc.DataService"></bean>
+	<bean id="incoming" class="com.deepu.springframework.ioc.IncomingService"></bean>
+	<bean id="message" class="com.deepu.springframework.ioc.MessageService"></bean>
+
+    <!-- Define a bean for a simple POJO -->
+    <bean id="sim" class="com.deepu.springframework.ioc.Sim">
+        <property name="service" ref="incoming"/>
+    </bean>
+
+</beans>

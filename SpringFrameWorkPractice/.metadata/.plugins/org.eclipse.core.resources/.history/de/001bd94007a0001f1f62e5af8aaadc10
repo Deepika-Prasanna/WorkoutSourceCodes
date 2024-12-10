@@ -1,0 +1,10 @@
+/**
+ * 
+ */
+/**
+ * @author ITnext
+ *
+ */
+module SpringFrameworkIOC {
+	requires spring.context;
+}

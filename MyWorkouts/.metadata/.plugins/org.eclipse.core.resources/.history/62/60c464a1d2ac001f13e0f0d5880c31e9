@@ -1,0 +1,19 @@
+package com.deepu.string.workouts;
+
+public class ReverseStringWithoutSpace {
+	
+	public static void main(String[] args) {
+		
+		String str = "Deepu";
+		
+		String reverse = reverseString(str);
+		
+		System.out.println(reverse);
+	}
+
+	private String reverseString(String str) {
+		
+		
+		return null;
+	}
+}

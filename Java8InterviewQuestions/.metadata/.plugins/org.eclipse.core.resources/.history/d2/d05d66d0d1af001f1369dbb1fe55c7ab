@@ -1,0 +1,22 @@
+package com.deepu.java8.interview.questions;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class StreamAssignment {
+
+	public static void main(String[] args) {
+		
+		
+	}
+	
+	public List<Student> getStudents(){
+		
+		List<Student> studentList = new ArrayList<>();
+		
+		Student deepu = new Student(1, "Deepu", 23456789056L, 36);
+		Student dhruvith = new Student(2, "Dhruvith", 2345678901L, 8);
+		
+		return studentList;
+	}
+}

@@ -1,0 +1,61 @@
+package com.deepu.parallel.stream;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class PrallelStreamExample {
+	
+	public static void main(String[] args) {
+		
+		System.out.println(Runtime.getRuntime().availableProcessors());
+		
+		new PrallelStreamExample().getEmployeeList().stream().parallel()
+		.filter(emp -> {
+			System.out.println("filter : applying filter on " + emp.getName() + " processed by " + Thread.currentThread());
+			return emp.getAge() > 25;
+			
+		})
+		.map(emp ->  {
+			System.out.println("map : applying map on "+ emp.getName() + " processed by thread " + Thread.currentThread());
+			return emp.getName();
+			})
+		.forEach(emp -> {
+			System.out.println("forEach : applying forEach on " + emp + " processed by thread " + Thread.currentThread());
+			System.out.println(emp);
+			});
+		
+	}
+
+	public List<Employee> getEmployeeList() {
+		
+		List<Employee> empList = new ArrayList<>();
+		
+		Employee deepu = new Employee(1, "Deepu", 30);
+		Employee dhruvith = new Employee(1, "Dhruvith", 8);
+		Employee sujatha = new Employee(1, "Sujatha", 62);
+		Employee adveesh = new Employee(1, "Adveesh", 72);
+		Employee veda = new Employee(1, "Veda", 42);
+		Employee chandu = new Employee(1, "Chandu", 40);
+		Employee prasanna = new Employee(1, "Prasanna", 78);
+		Employee shashi = new Employee(1, "Shashi", 73);
+		Employee aarush = new Employee(1, "Aarush", 12);
+		Employee anika = new Employee(1, "Anika", 11);
+		Employee rishik = new Employee(1, "Rishik", 9);
+		Employee surya = new Employee(1, "Surya", 3);
+		
+		empList.add(deepu);
+		empList.add(dhruvith);
+		empList.add(sujatha);
+		empList.add(adveesh);
+		empList.add(veda);
+		empList.add(chandu);
+		empList.add(prasanna);
+		empList.add(shashi);
+		empList.add(aarush);
+		empList.add(anika);
+		empList.add(rishik);
+		empList.add(surya);
+		
+		return empList;
+	}
+}

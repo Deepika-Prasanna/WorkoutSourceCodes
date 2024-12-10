@@ -1,0 +1,44 @@
+package com.deepu.singletondesingpattern;
+
+public class SingleTonDoubleCheckedLocking1 implements Runnable{
+
+  private static SingleTonDoubleCheckedLocking1 instance;
+  static SingleTonDoubleCheckedLocking1 singleTonInstance1;
+  static SingleTonDoubleCheckedLocking1 singleTonInstance2;
+  
+  private SingleTonDoubleCheckedLocking1() {
+    
+  }
+  
+  public static SingleTonDoubleCheckedLocking1 getInstance() {
+      if(instance == null){
+        synchronized(SingleTonDoubleCheckedLocking1.class) {
+          if(instance == null){
+            instance = new SingleTonDoubleCheckedLocking1();
+          }
+        }
+        
+      }
+      return instance;
+  }
+  
+  @Override
+  public void run(){
+    
+  }
+  
+  public static void main(String[] args) {
+	  
+	singleTonInstance1 = SingleTonDoubleCheckedLocking1.getInstance();
+	singleTonInstance2 = SingleTonDoubleCheckedLocking1.getInstance();
+    
+    Thread thread1 = new Thread(singleTonInstance1);
+    thread1.start();
+    
+    System.out.println(singleTonInstance1);
+     System.out.println(singleTonInstance2);
+    
+    
+  }
+
+}

@@ -1,0 +1,8 @@
+package com.deepu.springframework.ioc;
+
+public class App {
+	public static void main(String[] args) {
+		ApplicationContext context = new ClassPathXMLApplicationContext("beans.xml"); 
+	}
+
+}

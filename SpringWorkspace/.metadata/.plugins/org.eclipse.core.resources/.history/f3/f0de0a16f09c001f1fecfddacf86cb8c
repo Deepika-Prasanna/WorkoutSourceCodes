@@ -1,0 +1,9 @@
+package com.deepu.springioc;
+
+
+public class Computer {
+
+	public void start() {
+		System.out.println("Computer starting");
+	}
+}

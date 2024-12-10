@@ -1,0 +1,7 @@
+package com.deepu.threads.examples;
+
+public class CreatingThreadWithThreadClass extends Thread{
+	
+	
+
+}

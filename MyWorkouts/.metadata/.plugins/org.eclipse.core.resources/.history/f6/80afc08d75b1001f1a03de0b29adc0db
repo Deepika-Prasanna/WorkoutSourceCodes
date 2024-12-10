@@ -1,0 +1,23 @@
+package com.deepu.workouts;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ComparableExample {
+
+	public static void main(String[] args) {
+		
+		List<Student> studentList = new ArrayList<>();
+		
+		Student s1 = new Student(1,"Deepu",36);
+		Student s2 = new Student(2,"Dhruvith", 8);
+		Student s3 = new Student(3,"Prasanna",77);
+		
+		studentList.add(s1);
+		studentList.add(s2);
+		studentList.add(s3);
+		
+		Collections.sort();
+		
+	}
+}

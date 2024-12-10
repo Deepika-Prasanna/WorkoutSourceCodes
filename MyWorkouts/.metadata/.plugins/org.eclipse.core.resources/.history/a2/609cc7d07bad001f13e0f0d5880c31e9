@@ -1,0 +1,5 @@
+package com.deepu.singletondesingpattern;
+
+public class SingletonProtectionFromReflection {
+
+}

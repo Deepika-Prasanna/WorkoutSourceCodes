@@ -1,0 +1,14 @@
+package com.deepu.streamapi.examples;
+
+import java.util.stream.Stream;
+
+public class StreamTest2 {
+	
+	public static void main(String[] args) {
+		
+		Stream<String> myStream = Stream.of("Deepu", "Dhruvith", "Prasanna", "Sujatha", "Adveesh", "Veda", "Chandu");
+		
+		
+	}
+
+}

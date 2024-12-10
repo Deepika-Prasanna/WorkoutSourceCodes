@@ -1,0 +1,31 @@
+/*
+ * 3. Thread-Safe Singleton (Double-Checked Locking):
+		This is a more optimized and thread-safe approach using double-checked locking. It ensures that the instance is created 
+		only once while minimizing synchronization overhead.
+		
+		i)   volatile ensures that the instance is correctly shared between threads.
+        ii)  The first if checks whether an instance already exists. If not, it enters a synchronized block.
+        iii) The second if ensures that only one thread will create the instance, as other threads will skip the synchronized 
+             block once the instance is created.
+ */
+
+
+package com.deepu.singletondesingpattern;
+
+public class SingletonDoubleCheckedLocking {
+
+	private static SingletonDoubleCheckedLocking instance;
+	
+	private SingletonDoubleCheckedLocking() {}
+	
+	public SingletonDoubleCheckedLocking getInstance() {
+		if(instance == null) {
+			synchronized (SingletonDoubleCheckedLocking.class) {
+				if(instance == null) {
+					instance = new SingletonDoubleCheckedLocking();
+				}
+			}
+		}
+		return instance;
+	}
+}
